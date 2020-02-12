@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<!-- load the properties file : sports.properties -->
+	<context:property-placeholder location="classpath:/com/jsmile/springdemo/sports.properties"/>
     <!-- Define your beans here -->
     <bean id="myFortuneService" class="com.jsmile.springdemo.HappyFortuneService" />
     <bean id="myCoach" class="com.jsmile.springdemo.TrackCoach" >
@@ -17,11 +18,63 @@
     <bean id="myCraketCoach" class="com.jsmile.springdemo.CraketCoach">
     	<!-- Dependency Injection : setter injection -->
     	<property name="fortuneService" ref="myFortuneService" />
-    	<!-- Dependency Injection : literal value injection -->
+    	<!-- Dependency Injection : literal value injection 
     	<property name="email" value="jsmile@naver.com" />
-    	<property name="team" value="LA Dazus" />    
+    	<property name="team" value="LA Dazus" />    	
+    	-->
+    	<!-- Dependency Injection : .properties file value injection -->
+    	<property name="email" value="${foo.email}" />
+    	<property name="team" value="${foo.team}" />    
     </bean>
     
+	<!-- 
+	<bean id="moreComplexObject" class="example.ComplexObject" >
+		<property><value /></property>		<value /> : empty string  
+		<property><null /></property>		<null /> : null
+	--> 
+		<!-- results in a setAdminEmails(java.util.Properties) call  
+		<property name="adminEmails" > 
+			<props> 
+				<prop key="administrator" >administrator@example.org</prop> 
+				<prop key="support" >support@example.org</prop> 
+				<prop key="development" >development@example.org</prop> 
+			</props> 
+		</property> 
+		-->
+		<!-- (java.util.List)  
+		<property name="someList" > 
+			<list> 
+		        <value>리스트</value>
+		        <value type="java.lang.Double">1.0</value>
+		        <ref bean="memberDTO"></ref>
+		        <bean class="com.tistory.gangzzang.collection.MemberDAO" factory-method="getInstance"></bean>
+			</list> 
+		</property>
+		-->  
+		<!-- (java.util.Map)  
+		<property name="someMa" > 
+			<map> 
+				<entry key="myKey" value="myString"> 
+				<entry key="myRef" value-ref="memberDTO">				
+			</map> 
+		</property> 
+		-->	
+		<!-- (java.util.Set)  
+		<property name="someSet" > 
+			<set> 
+		        <value>셋</value>
+		        <value type="java.lang.Double">1.0</value>
+		        <ref bean="memberDTO"></ref>
+		        <bean class="com.tistory.gangzzang.collection.MemberDAO" factory-method="getInstance"></bean>
+
+			</set> 
+		</property>
+		-->
+	<!-- 
+	</bean>
+	
+	주의 : in the case of prototypes, configured destruction lifecycle callbacks are not called.    
+    -->
 
 </beans>
 
