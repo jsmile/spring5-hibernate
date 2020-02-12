@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<!-- load the properties file : sports.properties -->
+	<context:property-placeholder location="classpath:/com/jsmile/springdemo/sports.properties"/>
     <!-- Define your beans here -->
     <bean id="myFortuneService" class="com.jsmile.springdemo.HappyFortuneService" />
     <bean id="myCoach" class="com.jsmile.springdemo.TrackCoach" >
@@ -17,9 +18,13 @@
     <bean id="myCraketCoach" class="com.jsmile.springdemo.CraketCoach">
     	<!-- Dependency Injection : setter injection -->
     	<property name="fortuneService" ref="myFortuneService" />
-    	<!-- Dependency Injection : literal value injection -->
+    	<!-- Dependency Injection : literal value injection 
     	<property name="email" value="jsmile@naver.com" />
-    	<property name="team" value="LA Dazus" />    
+    	<property name="team" value="LA Dazus" />    	
+    	-->
+    	<!-- Dependency Injection : .properties file value injection -->
+    	<property name="email" value="${foo.email}" />
+    	<property name="team" value="${foo.team}" />    
     </bean>
     
 

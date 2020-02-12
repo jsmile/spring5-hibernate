@@ -17,7 +17,6 @@ public class SetterDemoApp
 		System.out.println( myCoach.getTeam() );
 		// close the context
 		context.close();
-
 	}
 
 }
