@@ -9,7 +9,11 @@
 
 	
     <!-- Define your beans here -->
-    <bean id="myCoach" class="com.jsmile.springdemo.TrackCoach" />
+    <bean id="myFortune" class="com.jsmile.springdemo.HappyFortuneService" />
+    <bean id="myCoach" class="com.jsmile.springdemo.TrackCoach" >
+    	<!-- Dependency Injection : constructor injection -->
+    	<constructor-arg ref="myFortune" />
+    </bean>
 
 </beans>
 
