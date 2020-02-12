@@ -9,11 +9,19 @@
 
 	
     <!-- Define your beans here -->
-    <bean id="myFortune" class="com.jsmile.springdemo.HappyFortuneService" />
+    <bean id="myFortuneService" class="com.jsmile.springdemo.HappyFortuneService" />
     <bean id="myCoach" class="com.jsmile.springdemo.TrackCoach" >
     	<!-- Dependency Injection : constructor injection -->
-    	<constructor-arg ref="myFortune" />
+    	<constructor-arg ref="myFortuneService" />
     </bean>
+    <bean id="myCraketCoach" class="com.jsmile.springdemo.CraketCoach">
+    	<!-- Dependency Injection : setter injection -->
+    	<property name="fortuneService" ref="myFortuneService" />
+    	<!-- Dependency Injection : literal value injection -->
+    	<property name="email" value="jsmile@naver.com" />
+    	<property name="team" value="LA Dazus" />    
+    </bean>
+    
 
 </beans>
 
