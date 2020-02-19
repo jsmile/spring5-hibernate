@@ -1,6 +1,8 @@
-package com.jsmile.springdemo;
+package com.jsmile.springdemo.app;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.jsmile.springdemo.ICoach;
 
 public class AnnotationDemoApp
 {

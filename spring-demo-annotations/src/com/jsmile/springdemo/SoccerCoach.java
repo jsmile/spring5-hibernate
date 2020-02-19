@@ -1,6 +1,7 @@
 package com.jsmile.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,6 +27,7 @@ public class SoccerCoach implements ICoach
 	
 	//dependency method injection by annotation. : possible to inject dependency by any method
 	@Autowired
+	@Qualifier( "happyFortuneService" )
 	public void doAwesomeStuff( IFortuneService _fortuneService )
 	{
 		fortuneService = _fortuneService;
