@@ -1,7 +1,11 @@
 package com.jsmile.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
@@ -9,6 +13,7 @@ import org.springframework.stereotype.Component;
  *  default component ID : Class 명의 앞자리를 소문자로 변경
  * */
 @Component( "thatSillyCoach" )
+@Scope( "singleton" )
 public class TennisCoach implements ICoach
 {
 	//@Autowired	
@@ -49,6 +54,11 @@ public class TennisCoach implements ICoach
 		return fortuneService.getFortuneService();
 	}
 	
-	
+	// init method after constructor : if sdk is higer than 9, 
+	@PostConstruct
+	public void doStartup() { System.out.println( "TennisCoach doStartup()." ); }
+	// clean method before destory;
+	@PreDestroy
+	public void doCleanup() { System.out.println( "TenishCoach doCleanup()" ); }
 
 }
