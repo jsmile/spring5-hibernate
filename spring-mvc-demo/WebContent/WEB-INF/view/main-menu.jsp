@@ -17,6 +17,8 @@
 	<hr />
 	<a href="silly/show-form">Hello World Form</a>
 	<br />
+	<a href="student/show-form">Student Form</a>
+	<br />
 	<input type="button" onclick="doSomeWork();" value="Click me" />
 </body>
 </html>
