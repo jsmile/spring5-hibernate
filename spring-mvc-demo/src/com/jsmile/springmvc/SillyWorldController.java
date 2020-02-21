@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class HelloWorldController
+@RequestMapping( "/silly" )
+public class SillyWorldController
 {
 	@RequestMapping( "/show-form" )
 	public String showForm() 
@@ -22,7 +23,7 @@ public class HelloWorldController
 		return "helloworld";
 	}
 	
-	@RequestMapping( "process-form-two" )
+	@RequestMapping( "/process-form-two" )
 	public String precessFormTwo( HttpServletRequest _request, Model _model ) 
 	{
 		
@@ -36,7 +37,7 @@ public class HelloWorldController
 		return "helloworld";
 	}
 	
-	@RequestMapping( "process-form-three" )
+	@RequestMapping( "/process-form-three" )
 	public String precessFormThree( @RequestParam( "studentName" ) String _theName, Model _model ) 
 	{
 		// create message
@@ -46,5 +47,5 @@ public class HelloWorldController
 		
 		return "helloworld";
 	}
-
+	
 }

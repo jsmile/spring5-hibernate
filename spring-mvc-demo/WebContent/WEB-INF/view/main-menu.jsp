@@ -15,7 +15,7 @@
 <body>
 	<h2>Spring MVC Demo - Home Page</h2>
 	<hr />
-	<a href="show-form">Hello World Form</a>
+	<a href="silly/show-form">Hello World Form</a>
 	<br />
 	<input type="button" onclick="doSomeWork();" value="Click me" />
 </body>
