@@ -15,9 +15,15 @@
 		<br /><br />
 		Last Name : <form:input path="lastName" />
 		<br /><br />
+<%-- no .properties		
 		Country : <form:select path="country">
 					<form:options items="${student.countryOptions}" />
 				  </form:select>
+ --%>				
+ 		<!-- task 4 : .properties 파일 적용을 위한 tag 정의 -->
+ 		Country : <form:select path="country">
+ 					<form:options items="${countryOptions}" /> 		
+ 				  </form:select>  
 		<br /><br />
 				Favorite Language:
 		
