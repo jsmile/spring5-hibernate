@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,8 @@
 	<br />
 	<a href="student/show-form">Student Form</a>
 	<br />
+	<a href="customer/show-form">Customer Form</a>
+	<br />	
 	<input type="button" onclick="doSomeWork();" value="Click me" />
 </body>
 </html>

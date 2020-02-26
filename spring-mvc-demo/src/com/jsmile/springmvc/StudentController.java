@@ -24,6 +24,11 @@ public class StudentController
 	public String processForm( @ModelAttribute( "student" ) Student _theStudent ) 
 	{
 		System.out.println( "theStuednt : " + _theStudent.getFirstName() + " " + _theStudent.getLastName() );
+		for ( String item : _theStudent.getOperatingSystems() ) 
+		{
+			System.out.println( "operatingSystems : " + item );	
+		}
+		
 		
 		return "student-confirmation";
 	}
