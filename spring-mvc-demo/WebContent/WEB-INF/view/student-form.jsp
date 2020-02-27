@@ -9,7 +9,7 @@
 </head>
 <body>
 	
-	<!-- modelattribute is the attribute name of model in the controller -->
+	<!-- modelAttribute is the attribute name of model in the controller -->
 	<form:form action="process-form" modelAttribute="student">
 		First Name : <form:input path="firstName" />
 		<br /><br />

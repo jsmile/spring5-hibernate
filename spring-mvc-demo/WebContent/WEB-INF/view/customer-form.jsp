@@ -15,8 +15,19 @@
 	<form:form action="process-form" modelAttribute="customer">
 		<div>First Name : <form:input path="firstName" /> </div>
 		<br /> <br />
-		<div>Last Name : <form:input path="lastName" /> 
+		<div>*Last Name : <form:input path="lastName" /> 
 						<form:errors path="lastName" cssClass="error" /> 
+		</div>
+		<br /><br />
+		<div>
+			Free passes : <form:input path="freePasses" />
+			<form:errors path="freePasses" cssClass="error" />
+		</div>
+		 		
+		<br /><br />
+		<div>
+			Postal Code : <form:input path="postalCode" />
+			<form:errors path="postalCode" cssClass="error" />
 		</div> 		
 		<input type="submit" value="제출" />
 	</form:form>

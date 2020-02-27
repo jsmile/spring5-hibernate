@@ -34,9 +34,13 @@ public class CustomerController
 	
 	@RequestMapping( "/process-form" )
 	public String processForm( 
-			@Valid @ModelAttribute( "customer" ) Customer _customer
-			, BindingResult _bindingResult ) 
+									@Valid @ModelAttribute( "customer" ) Customer _customer
+									, BindingResult _bindingResult ) 
 	{
+		// error code 인 codes [typeMismatch.customer.freePasses, ... ]을  
+		// messages.properties 에  정의하여 처리
+		System.out.println( "BindingResult : " + _bindingResult );
+		
 		if( _bindingResult.hasErrors() ) { return "customer-form"; }
 		else { return "customer-confirmation"; }
 	}

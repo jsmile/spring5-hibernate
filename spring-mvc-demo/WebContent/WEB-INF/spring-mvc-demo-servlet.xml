@@ -30,7 +30,13 @@
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<!-- task 2 : apply .properties to spring config --> 
-	<util:properties id="countryOptions" location="classpath:/com/jsmile/springmvc/resources/countries.properties" />
+<!-- 	<util:properties id="countryOptions" location="classpath:/com/jsmile/springmvc/resources/countries.properties" /> -->
+	<util:properties id="countryOptions" location="classpath:resources/countries.properties" />
+	
+	<!-- Load custom message resources -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/messages" />
+	</bean>
 
 </beans>
 
