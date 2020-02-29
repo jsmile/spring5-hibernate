@@ -20,7 +20,7 @@
 		</div>
 		<br /><br />
 		<div>
-			Free passes : <form:input path="freePasses" />
+			*Free passes : <form:input path="freePasses" />
 			<form:errors path="freePasses" cssClass="error" />
 		</div>
 		 		
@@ -28,6 +28,12 @@
 		<div>
 			Postal Code : <form:input path="postalCode" />
 			<form:errors path="postalCode" cssClass="error" />
+		</div> 		
+
+		<br /><br />
+		<div>
+			Course Code : <form:input path="courseCode" />
+			<form:errors path="courseCode" cssClass="error" />
 		</div> 		
 		<input type="submit" value="제출" />
 	</form:form>

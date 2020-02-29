@@ -8,6 +8,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
+import com.jsmile.springmvc.validation.CourseCode;
+
 @Component
 public class Customer
 {
@@ -25,6 +27,9 @@ public class Customer
 	@Pattern( regexp="^[a-zA-Z0-9]{5}", message="우편번호는 5글자 입니다.")
 	private String postalCode;
 	
+//	@CourseCode( value= { "JS", "LUV" }, message="반드시 JS로 시작해야 합니다." )
+	@CourseCode
+	private String courseCode;
 	
 	public Customer() { }
 
@@ -50,7 +55,10 @@ public class Customer
 	public void setFreePasses( Integer _freePasses ) { freePasses = _freePasses; }
 
 	public String getPostalCode() { return postalCode; }
-	public void setPostalCode( String _postalCode ) { postalCode = _postalCode; }	
+	public void setPostalCode( String _postalCode ) { postalCode = _postalCode; }
+
+	public String getCourseCode() { return courseCode; }
+	public void setCourseCode( String _courseCode ) { courseCode = _courseCode; }
 
 	
 }
