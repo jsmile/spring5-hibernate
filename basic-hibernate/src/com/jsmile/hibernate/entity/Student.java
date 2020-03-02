@@ -18,42 +18,42 @@ public class Student
 	int id;
 	
 	@Column( name="first_name" )
-	String FirstName;
+	String firstName;
 	
 	@Column( name="last_name" )
-	String LastName;
+	String lastName;
 	
 	@Column( name="email" )
-	String Email;
+	String email;
 	
 	
 	public Student() { }
 
 	public Student( String _firstName, String _lastName, String _email )
 	{
-		FirstName = _firstName;
-		LastName = _lastName;
-		Email = _email;
+		firstName = _firstName;
+		lastName = _lastName;
+		email = _email;
 	}
 
 
 	public int getId() { return id; }
 	public void setId( int _id ) { id = _id; }
 
-	public String getFirstName() { return FirstName; }
-	public void setFirstName( String _firstName ) { FirstName = _firstName; }
+	public String getFirstName() { return firstName; }
+	public void setFirstName( String _firstName ) { firstName = _firstName; }
 
-	public String getLastName() { return LastName; }
-	public void setLastName( String _lastName ) { LastName = _lastName; }
+	public String getLastName() { return lastName; }
+	public void setLastName( String _lastName ) { lastName = _lastName; }
 
-	public String getEmail(){ return Email; }
-	public void setEmail( String _email ) { Email = _email; }
+	public String getEmail(){ return email; }
+	public void setEmail( String _email ) { email = _email; }
 
 	
 	@Override
 	public String toString()
 	{
-		return "Student [id=" + id + ", FirstName=" + FirstName + ", LastName=" + LastName + ", Email=" + Email + "]";
+		return "Student [id=" + id + ", FirstName=" + firstName + ", LastName=" + lastName + ", Email=" + email + "]";
 	}	
 	
 
