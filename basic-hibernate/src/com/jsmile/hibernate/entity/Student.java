@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table( name="student" )
 public class Student
 {
+	//1) Create implementation of org.hibernate.id.IdentifierGenerator
+	//2) Override the method : public Serializable generate() 
 	@Id
 	@GeneratedValue( strategy=GenerationType.IDENTITY )
 	@Column( name="id" )

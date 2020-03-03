@@ -6,6 +6,12 @@ import org.hibernate.cfg.Configuration;
 
 import com.jsmile.hibernate.entity.Student;
 
+/**
+ *  1) id is started from 3000
+ *  		ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000;
+ *  2) to reset AUTO_INCREMENT TO 1
+ *  		TRUNCATE hb_student_tracker.student;
+ * */
 public class AutoPrimaryKeyApp
 {
 
