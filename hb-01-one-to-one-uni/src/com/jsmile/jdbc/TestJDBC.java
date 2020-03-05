@@ -14,6 +14,8 @@ public class TestJDBC
 		String user = "hbstudent";
 		String password = "hbstudent";
 		
+		
+		
 		try 
 		{
 			System.out.println( "Connecting to database : " + jdbcURL );
@@ -24,13 +26,15 @@ public class TestJDBC
 			{
 				System.out.println( "DB Connection is successful." );
 			}
+			
+			con.close();
 		} 
 		catch (SQLException  e) 
 		{
 			System.out.println( "DB connection is failed !" );
-			e.printStackTrace();
+			e.printStackTrace();			
 		}
-
+		
 	}
 
 }
