@@ -38,10 +38,12 @@ public class InstructorDetail
 										, CascadeType.PERSIST, CascadeType.PERSIST 
 										, CascadeType.REFRESH 
 								} )
+
 //	"mappedBy" tells Hibernate( 참조받는 것 : mappedBy, 참조하는 것 : joinColumn )
 //	Look at the 'instructorDetail' property in the Instructor
 //	Use information from the Instructor class '@JoinColumn'
 //	To help find associated instructor	
+
 //	@OneToOne( mappedBy="instructorDetail", cascade=CascadeType.ALL )	// for Bidirectional Relationship
 	private Instructor instructor;
 	
